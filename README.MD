@@ -8,8 +8,7 @@ It transforms important security concepts into simple, readable, and aesthetic c
 
 ## 🌐 Live Zine
 
-👉 https://your-username.github.io/cyber-safety-zine/  
-*(Replace with your hosted link)*
+👉 https://falak8484.github.io/cyber-safety-zine/
 
 ---
 
