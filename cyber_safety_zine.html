@@ -1,0 +1,599 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&family=Fredoka+One&family=Space+Mono:ital@0;1&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --mint:#d4f5e9;--mint-dk:#2d7a5f;
+  --lav:#ece8ff;--lav-dk:#4a3f8f;
+  --peach:#ffe8d6;--peach-dk:#8f4020;
+  --sky:#d6eeff;--sky-dk:#1a4f7a;
+  --rose:#ffd6e7;--rose-dk:#7a2048;
+  --butter:#fff5cc;--butter-dk:#6b5000;
+  --ink:#1e1b2e;
+  --ff:'Fredoka One',cursive;
+  --fb:'Nunito',sans-serif;
+  --fm:'Space Mono',monospace;
+}
+
+body{font-family:var(--fb);background:#fdf8f3;color:var(--ink);line-height:1.6;overflow-x:hidden}
+
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+
+/* NAV */
+nav{background:#fff;border-bottom:2px solid var(--ink);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-family:var(--ff);font-size:22px;color:var(--ink);display:flex;align-items:center;gap:8px}
+.logo-dot{width:12px;height:12px;border-radius:50%;background:#ff6b9d;display:inline-block}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{font-size:12px;font-weight:700;padding:5px 10px;border-radius:20px;border:1.5px solid transparent;text-decoration:none;color:var(--ink);transition:all .2s}
+.nav-links a:hover{border-color:var(--ink);background:var(--butter)}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#ffeef6 0%,#e8f4ff 50%,#f0fff8 100%);border-bottom:3px solid var(--ink);padding:60px 32px 48px;text-align:center;position:relative;overflow:hidden}
+.hero-pill{display:inline-block;background:var(--ink);color:#fff;font-size:11px;font-weight:700;letter-spacing:.12em;padding:4px 14px;border-radius:20px;margin-bottom:16px}
+.hero h1{font-family:var(--ff);font-size:clamp(2.2rem,6vw,4rem);color:var(--ink);line-height:1.1;margin-bottom:16px}
+.hero h1 span{color:#ff6b9d}
+.hero-sub{font-size:16px;color:#555;max-width:500px;margin:0 auto 28px;font-weight:600}
+.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-primary{background:var(--ink);color:#fff;font-family:var(--fb);font-weight:700;font-size:14px;padding:12px 24px;border:2px solid var(--ink);border-radius:30px;cursor:pointer;text-decoration:none;transition:all .18s}
+.btn-primary:hover{background:#fff;color:var(--ink)}
+.btn-outline{background:#fff;color:var(--ink);font-family:var(--fb);font-weight:700;font-size:14px;padding:12px 24px;border:2px solid var(--ink);border-radius:30px;cursor:pointer;text-decoration:none;transition:all .18s}
+.btn-outline:hover{background:var(--ink);color:#fff}
+
+/* floating deco shapes */
+.deco{position:absolute;pointer-events:none}
+.deco-star{font-size:28px;animation:spin 8s linear infinite}
+.deco-blob{border-radius:50%;opacity:.4}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* SECTION STRUCTURE */
+.zine-section{padding:56px 24px;max-width:760px;margin:0 auto}
+.section-tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.14em;padding:3px 12px;border-radius:20px;border:1.5px solid;margin-bottom:12px;text-transform:uppercase}
+.section-title{font-family:var(--ff);font-size:clamp(1.6rem,4vw,2.4rem);margin-bottom:8px;line-height:1.15}
+.section-intro{font-size:15px;color:#555;margin-bottom:32px;max-width:580px}
+
+/* DIVIDER */
+.zine-divider{display:flex;align-items:center;gap:12px;padding:0 24px;margin:-8px auto 0;max-width:760px}
+.div-line{flex:1;height:2px;background:var(--ink)}
+.div-icon{font-size:20px;font-weight:800;font-family:var(--ff);color:var(--ink);white-space:nowrap;font-size:13px}
+
+/* ── SECTION 1: PHISHING ── */
+.s1{background:#fdf8f3}
+.tag-red{color:#7a2048;border-color:#f9a8c9;background:var(--rose)}
+
+/* email mockup */
+.email-mockup{background:#fff;border:2px solid var(--ink);border-radius:16px;overflow:hidden;margin-bottom:32px;box-shadow:4px 4px 0 var(--ink)}
+.email-toolbar{background:#f1f1f1;border-bottom:2px solid var(--ink);padding:10px 16px;display:flex;gap:8px;align-items:center}
+.dot-r{width:11px;height:11px;border-radius:50%;background:#ff5f57;border:1.5px solid #d93b31}
+.dot-y{width:11px;height:11px;border-radius:50%;background:#febc2e;border:1.5px solid #d9962b}
+.dot-g{width:11px;height:11px;border-radius:50%;background:#28c840;border:1.5px solid #22a832}
+.email-body{padding:20px 24px}
+.email-field{display:flex;gap:8px;margin-bottom:8px;font-size:13px;align-items:flex-start}
+.email-label{font-weight:700;min-width:40px;color:#888}
+.email-val{color:var(--ink);font-family:var(--fm);font-size:12px}
+.email-divider{height:1.5px;background:#eee;margin:12px 0}
+.email-content p{font-size:14px;margin-bottom:10px;line-height:1.6}
+.email-link{color:#2563eb;text-decoration:underline;font-family:var(--fm);font-size:12px}
+
+/* red flag badges */
+.flag-badge{display:inline-flex;align-items:center;gap:5px;background:#fff0f5;border:1.5px solid #f9a8c9;border-radius:8px;padding:3px 10px;font-size:12px;font-weight:700;color:#7a2048;margin:2px}
+.flag-dot{width:7px;height:7px;border-radius:50%;background:#ff6b9d;flex-shrink:0}
+
+/* annotated highlights */
+.highlight-urgent{background:#fff3cd;border-bottom:2px solid #f59e0b;cursor:help;position:relative}
+.highlight-sus{background:#fce8ef;border-bottom:2px solid #f43f5e;cursor:help}
+.highlight-link{background:#dbeafe;border-bottom:2px solid #3b82f6;cursor:help}
+
+.annotation{position:relative;display:inline}
+.ann-tip{display:none;position:absolute;bottom:calc(100% + 6px);left:0;background:var(--ink);color:#fff;font-size:11px;padding:5px 9px;border-radius:8px;white-space:nowrap;z-index:10;font-weight:600;pointer-events:none}
+.annotation:hover .ann-tip{display:block}
+
+.flags-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:24px}
+.flag-card{background:#fff;border:2px solid var(--ink);border-radius:14px;padding:14px;position:relative}
+.flag-card-num{font-family:var(--ff);font-size:28px;color:#fce8ef;position:absolute;top:8px;right:12px}
+.flag-card-title{font-weight:800;font-size:13px;margin-bottom:4px;color:var(--ink)}
+.flag-card-body{font-size:12px;color:#555;line-height:1.5}
+
+/* ── SECTION 2: PASSWORDS ── */
+.s2{background:var(--lav)}
+.tag-purple{color:#4a3f8f;border-color:#c5b8ff;background:#e0d9ff}
+
+.strength-demo{background:#fff;border:2px solid var(--ink);border-radius:16px;padding:22px;margin-bottom:24px;box-shadow:4px 4px 0 var(--ink)}
+.pwd-row{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.pwd-label{font-size:12px;font-weight:700;min-width:68px;color:#888;text-transform:uppercase;letter-spacing:.05em}
+.pwd-val{font-family:var(--fm);font-size:13px;background:#f5f5f5;padding:5px 10px;border-radius:8px;border:1.5px solid #ddd;flex:1;min-width:140px;word-break:break-all}
+.pwd-bar{height:8px;border-radius:4px;flex:1;min-width:80px}
+.pwd-score{font-size:11px;font-weight:800;padding:3px 9px;border-radius:12px;white-space:nowrap}
+.bar-weak{background:#fca5a5;width:25%}
+.bar-ok{background:#fcd34d;width:55%}
+.bar-good{background:#86efac;width:80%}
+.bar-great{background:#4ade80;width:100%}
+.score-weak{background:#fee2e2;color:#991b1b}
+.score-ok{background:#fef3c7;color:#92400e}
+.score-good{background:#dcfce7;color:#166534}
+.score-great{background:#bbf7d0;color:#14532d}
+
+.pwd-tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:8px}
+.tip-card{background:#fff;border:2px solid var(--ink);border-radius:14px;padding:14px;text-align:center}
+.tip-icon{width:44px;height:44px;border-radius:50%;margin:0 auto 8px;display:flex;align-items:center;justify-content:center;font-size:22px;border:2px solid var(--ink)}
+.tip-card h4{font-size:13px;font-weight:800;margin-bottom:4px}
+.tip-card p{font-size:12px;color:#555;line-height:1.45}
+
+/* passphrase builder */
+.phrase-builder{background:#fff;border:2px solid var(--ink);border-radius:16px;padding:18px;margin-top:20px;box-shadow:4px 4px 0 var(--ink)}
+.phrase-builder h4{font-weight:800;font-size:14px;margin-bottom:10px}
+.phrase-words{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.pw{background:var(--lav);border:2px solid var(--lav-dk);border-radius:10px;padding:6px 12px;font-weight:700;font-size:14px;color:var(--lav-dk);cursor:pointer;transition:all .15s;user-select:none}
+.pw:hover{transform:translateY(-2px)}
+.pw.selected{background:var(--lav-dk);color:#fff}
+.phrase-output{font-family:var(--fm);font-size:13px;background:#f9f9f9;padding:8px 12px;border-radius:8px;border:1.5px solid #ddd;min-height:36px;word-break:break-all;color:var(--ink)}
+.phrase-note{font-size:11px;color:#888;margin-top:6px}
+
+/* ── SECTION 3: HACKED ── */
+.s3{background:var(--mint)}
+.tag-green{color:#2d7a5f;border-color:#6ee7b7;background:#c6f7e9}
+
+.steps-list{display:flex;flex-direction:column;gap:14px;margin-bottom:32px}
+.step-item{display:flex;gap:14px;align-items:flex-start;background:#fff;border:2px solid var(--ink);border-radius:14px;padding:16px;position:relative;transition:transform .15s}
+.step-item:hover{transform:translateX(4px)}
+.step-num{font-family:var(--ff);font-size:28px;color:#6ee7b7;min-width:36px;line-height:1;flex-shrink:0}
+.step-content h4{font-weight:800;font-size:14px;margin-bottom:3px}
+.step-content p{font-size:13px;color:#555;line-height:1.5}
+.step-urgency{position:absolute;top:10px;right:12px;font-size:10px;font-weight:800;padding:2px 8px;border-radius:10px;letter-spacing:.05em}
+.urg-now{background:#fee2e2;color:#991b1b}
+.urg-soon{background:#fef3c7;color:#92400e}
+.urg-later{background:#dcfce7;color:#166534}
+
+/* checklist */
+.checklist{background:#fff;border:2px solid var(--ink);border-radius:16px;padding:18px;box-shadow:4px 4px 0 var(--ink)}
+.checklist h4{font-weight:800;font-size:14px;margin-bottom:12px}
+.check-item{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid #f0f0f0;cursor:pointer;user-select:none}
+.check-item:last-child{border-bottom:none}
+.check-box{width:20px;height:20px;border:2px solid var(--ink);border-radius:5px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .15s;margin-top:1px}
+.check-box.checked{background:var(--ink)}
+.check-tick{display:none;color:#fff;font-size:12px;font-weight:800}
+.check-box.checked .check-tick{display:block}
+.check-text{font-size:13px;color:var(--ink);line-height:1.4}
+.check-text.done{text-decoration:line-through;color:#aaa}
+
+/* ── SECTION 4: BONUS TIPS ── */
+.s4{background:var(--butter)}
+.tag-amber{color:#6b5000;border-color:#fcd34d;background:#fef9c3}
+
+.tips-bento{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px}
+.bento-card{border:2px solid var(--ink);border-radius:16px;padding:18px;position:relative;overflow:hidden;transition:transform .15s}
+.bento-card:hover{transform:translateY(-3px)}
+.bento-card h4{font-weight:800;font-size:14px;margin-bottom:6px}
+.bento-card p{font-size:12px;line-height:1.5;color:#333}
+.bento-bg{position:absolute;bottom:-10px;right:-10px;font-size:52px;opacity:.12;pointer-events:none}
+
+/* quiz */
+.quiz-box{background:#fff;border:2px solid var(--ink);border-radius:16px;padding:20px;margin-top:28px;box-shadow:4px 4px 0 var(--ink)}
+.quiz-q{font-weight:800;font-size:14px;margin-bottom:12px}
+.quiz-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.quiz-opt{background:#f9f9f9;border:1.5px solid #ddd;border-radius:10px;padding:9px 12px;font-size:13px;cursor:pointer;transition:all .15s;text-align:left;font-family:var(--fb)}
+.quiz-opt:hover{border-color:var(--ink);background:var(--lav)}
+.quiz-opt.correct{background:#dcfce7;border-color:#16a34a;color:#14532d;font-weight:700}
+.quiz-opt.wrong{background:#fee2e2;border-color:#dc2626;color:#7f1d1d}
+.quiz-feedback{font-size:13px;font-weight:700;padding:8px 12px;border-radius:8px;margin-top:4px;display:none}
+.quiz-next{margin-top:10px;background:var(--ink);color:#fff;border:none;border-radius:20px;padding:8px 18px;font-family:var(--fb);font-weight:700;font-size:13px;cursor:pointer;display:none}
+
+/* FOOTER */
+footer{background:var(--ink);color:#fff;text-align:center;padding:36px 24px}
+footer h3{font-family:var(--ff);font-size:24px;margin-bottom:8px}
+footer p{font-size:13px;opacity:.7;max-width:440px;margin:0 auto 20px}
+.footer-badges{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.f-badge{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:5px 14px;font-size:12px;font-weight:700}
+</style>
+
+<h2 class="sr-only">Cyber Safety Zine — an illustrated guide to phishing, passwords, and what to do if you get hacked</h2>
+
+<nav>
+  <div class="logo"><div class="logo-dot"></div> CyberSafe Zine</div>
+  <div class="nav-links">
+    <a href="#phishing">🎣 Phishing</a>
+    <a href="#passwords">🔑 Passwords</a>
+    <a href="#hacked">🚨 Got hacked?</a>
+    <a href="#bonus">✨ Bonus tips</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="deco deco-star" style="top:20px;left:40px;font-size:24px">✦</div>
+  <div class="deco deco-star" style="top:50px;right:60px;font-size:18px;animation-direction:reverse">✦</div>
+  <div class="deco deco-blob" style="width:120px;height:120px;background:#ffd6e7;top:-30px;left:-20px"></div>
+  <div class="deco deco-blob" style="width:80px;height:80px;background:#d6eeff;bottom:-20px;right:30px"></div>
+  <div class="hero-pill">Issue 01 · Free Forever</div>
+  <h1>Stay safe<br/>online, <span>cutie</span> 💖</h1>
+  <p class="hero-sub">Your friendly guide to cybersecurity — no jargon, just the things that actually matter.</p>
+  <div class="hero-actions">
+    <a class="btn-primary" href="#phishing">Start reading</a>
+    <a class="btn-outline" href="#bonus">Quick tips</a>
+  </div>
+</div>
+
+<!-- ─── SECTION 1: PHISHING ─── -->
+<div id="phishing" class="zine-section s1">
+  <div class="section-tag tag-red">Chapter 1</div>
+  <div class="section-title">How to spot a phishing email 🎣</div>
+  <p class="section-intro">Phishing emails pretend to be someone you trust — your bank, Netflix, even your boss. Here's a real example (annotated!) so you can train your eye.</p>
+
+  <div class="email-mockup">
+    <div class="email-toolbar">
+      <div class="dot-r"></div><div class="dot-y"></div><div class="dot-g"></div>
+    </div>
+    <div class="email-body">
+      <div class="email-field">
+        <span class="email-label">From:</span>
+        <span class="email-val">
+          <span class="annotation"><span class="highlight-sus">security@paypa1-alert.com</span><span class="ann-tip">🚩 Fake domain! Paypal uses @paypal.com</span></span>
+        </span>
+      </div>
+      <div class="email-field">
+        <span class="email-label">To:</span>
+        <span class="email-val">you@email.com</span>
+      </div>
+      <div class="email-field">
+        <span class="email-label">Subject:</span>
+        <span class="email-val">
+          <span class="annotation"><span class="highlight-urgent">URGENT: Your account will be suspended in 24 hours!</span><span class="ann-tip">🚩 Urgency is a classic pressure tactic</span></span>
+        </span>
+      </div>
+      <div class="email-divider"></div>
+      <div class="email-content">
+        <p>Dear Valued Customer,</p>
+        <p>We have detected <span class="annotation"><span class="highlight-sus">suspicious activity</span><span class="ann-tip">🚩 Vague threat — they don't name the activity</span></span> on your account. Your account will be <span class="annotation"><span class="highlight-urgent">permanently suspended</span><span class="ann-tip">🚩 More scare tactics to rush you</span></span> unless you verify your information immediately.</p>
+        <p>Click below to confirm your identity and <span class="annotation"><span class="highlight-sus">enter your password and card number</span><span class="ann-tip">🚩 Legit companies never ask for this by email</span></span>:</p>
+        <p><span class="annotation"><span class="email-link highlight-link">http://paypa1-secure-login.xyz/verify?id=38291</span><span class="ann-tip">🚩 Sketchy URL! Hover before you click — always.</span></span></p>
+        <p style="font-size:13px;color:#888;margin-top:12px">PayPal Security Team<br/><span style="font-size:11px">This email was auto-generated. Do not reply.</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:16px;font-weight:800;font-size:13px">Red flags spotted in that email:</div>
+  <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:28px">
+    <span class="flag-badge"><div class="flag-dot"></div> Fake sender domain</span>
+    <span class="flag-badge"><div class="flag-dot"></div> Urgency &amp; threats</span>
+    <span class="flag-badge"><div class="flag-dot"></div> Vague "suspicious activity"</span>
+    <span class="flag-badge"><div class="flag-dot"></div> Asks for password/card</span>
+    <span class="flag-badge"><div class="flag-dot"></div> Sketchy URL</span>
+    <span class="flag-badge"><div class="flag-dot"></div> No personal greeting</span>
+  </div>
+
+  <div class="flags-grid">
+    <div class="flag-card">
+      <div class="flag-card-num">01</div>
+      <div class="flag-card-title">Check the sender's email</div>
+      <div class="flag-card-body">Real companies email from their actual domain. "paypa1-alert.com" ≠ paypal.com. Look for swapped letters!</div>
+    </div>
+    <div class="flag-card">
+      <div class="flag-card-num">02</div>
+      <div class="flag-card-title">Hover links before clicking</div>
+      <div class="flag-card-body">Hover over any link and look at the real URL in your browser's status bar. If it looks weird, don't click!</div>
+    </div>
+    <div class="flag-card">
+      <div class="flag-card-num">03</div>
+      <div class="flag-card-title">Urgency = manipulation</div>
+      <div class="flag-card-body">"Act NOW or lose everything!" is a pressure tactic. Take a breath. Real businesses give you time.</div>
+    </div>
+    <div class="flag-card">
+      <div class="flag-card-num">04</div>
+      <div class="flag-card-title">When in doubt, go direct</div>
+      <div class="flag-card-body">Don't click email links. Open your browser and go directly to the website yourself.</div>
+    </div>
+  </div>
+</div>
+
+<div class="zine-divider"><div class="div-line"></div><div class="div-icon">✦ passwords ✦</div><div class="div-line"></div></div>
+
+<!-- ─── SECTION 2: PASSWORDS ─── -->
+<div id="passwords" class="zine-section s2">
+  <div class="section-tag tag-purple">Chapter 2</div>
+  <div class="section-title">Password tips that actually work 🔑</div>
+  <p class="section-intro">Weak passwords are the #1 way people get hacked. Let's fix that — starting with seeing what makes a password strong.</p>
+
+  <div class="strength-demo">
+    <div class="pwd-row">
+      <span class="pwd-label">Weak</span>
+      <span class="pwd-val">password123</span>
+      <div class="pwd-bar bar-weak"></div>
+      <span class="pwd-score score-weak">Terrible</span>
+    </div>
+    <div class="pwd-row">
+      <span class="pwd-label">Okay</span>
+      <span class="pwd-val">P@ssw0rd!</span>
+      <div class="pwd-bar bar-ok"></div>
+      <span class="pwd-score score-ok">Meh</span>
+    </div>
+    <div class="pwd-row">
+      <span class="pwd-label">Good</span>
+      <span class="pwd-val">T!ger#29blue</span>
+      <div class="pwd-bar bar-good"></div>
+      <span class="pwd-score score-good">Good</span>
+    </div>
+    <div class="pwd-row">
+      <span class="pwd-label">Best</span>
+      <span class="pwd-val">correct-horse-battery-staple</span>
+      <div class="pwd-bar bar-great"></div>
+      <span class="pwd-score score-great">Excellent</span>
+    </div>
+  </div>
+
+  <div class="pwd-tips">
+    <div class="tip-card">
+      <div class="tip-icon" style="background:#ece8ff">🎲</div>
+      <h4>Use a passphrase</h4>
+      <p>4+ random words strung together. Long, memorable, and incredibly hard to crack.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon" style="background:#d4f5e9">🔐</div>
+      <h4>Use a password manager</h4>
+      <p>Bitwarden or 1Password remembers everything. One strong password to rule them all.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon" style="background:#ffe8d6">🚫</div>
+      <h4>Never reuse passwords</h4>
+      <p>If one site gets breached, all your accounts with that password are compromised.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon" style="background:#ffd6e7">📱</div>
+      <h4>Turn on 2FA everywhere</h4>
+      <p>Two-factor auth = even if they get your password, they still can't log in.</p>
+    </div>
+  </div>
+
+  <div class="phrase-builder">
+    <h4>✨ Build your own passphrase — click words to add them!</h4>
+    <div class="phrase-words" id="wordPool">
+      <div class="pw" data-w="correct">correct</div>
+      <div class="pw" data-w="horse">horse</div>
+      <div class="pw" data-w="battery">battery</div>
+      <div class="pw" data-w="staple">staple</div>
+      <div class="pw" data-w="purple">purple</div>
+      <div class="pw" data-w="tiger">tiger</div>
+      <div class="pw" data-w="ocean">ocean</div>
+      <div class="pw" data-w="cloud">cloud</div>
+      <div class="pw" data-w="rocket">rocket</div>
+      <div class="pw" data-w="button">button</div>
+    </div>
+    <div class="phrase-output" id="phraseOut">Click words above to build your passphrase…</div>
+    <div class="phrase-note" id="phraseNote">Add 4+ words for a strong passphrase</div>
+  </div>
+</div>
+
+<div class="zine-divider"><div class="div-line"></div><div class="div-icon">✦ got hacked? ✦</div><div class="div-line"></div></div>
+
+<!-- ─── SECTION 3: HACKED ─── -->
+<div id="hacked" class="zine-section s3">
+  <div class="section-tag tag-green">Chapter 3</div>
+  <div class="section-title">What to do if you're hacked 🚨</div>
+  <p class="section-intro">Don't panic — but do act fast. Here's your step-by-step response plan, ordered by urgency.</p>
+
+  <div class="steps-list">
+    <div class="step-item">
+      <div class="step-num">01</div>
+      <div class="step-content">
+        <h4>Change your passwords immediately</h4>
+        <p>Start with email (your master key), then banking, then everything else. Use a new, unique password for each.</p>
+      </div>
+      <div class="step-urgency urg-now">DO NOW</div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">02</div>
+      <div class="step-content">
+        <h4>Enable two-factor authentication</h4>
+        <p>Turn on 2FA on every account that supports it. SMS is okay, an authenticator app is better.</p>
+      </div>
+      <div class="step-urgency urg-now">DO NOW</div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">03</div>
+      <div class="step-content">
+        <h4>Check haveibeenpwned.com</h4>
+        <p>Enter your email to see which breaches have exposed your data. This tells you which accounts need urgent attention.</p>
+      </div>
+      <div class="step-urgency urg-now">DO NOW</div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">04</div>
+      <div class="step-content">
+        <h4>Tell your bank if financial data was exposed</h4>
+        <p>Call them directly (not via email). They can freeze accounts and issue new cards before damage is done.</p>
+      </div>
+      <div class="step-urgency urg-soon">DO SOON</div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">05</div>
+      <div class="step-content">
+        <h4>Scan your devices for malware</h4>
+        <p>Run a full scan with Malwarebytes (free version is great). Do this before logging into anything important.</p>
+      </div>
+      <div class="step-urgency urg-soon">DO SOON</div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">06</div>
+      <div class="step-content">
+        <h4>Warn your contacts</h4>
+        <p>If your email or social accounts were compromised, hackers may have sent phishing messages to your contacts. Give them a heads-up!</p>
+      </div>
+      <div class="step-urgency urg-later">WHEN STABLE</div>
+    </div>
+  </div>
+
+  <div class="checklist">
+    <h4>Recovery checklist — click to check off ✓</h4>
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box"><span class="check-tick">✓</span></div>
+      <div class="check-text">Changed email password</div>
+    </div>
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box"><span class="check-tick">✓</span></div>
+      <div class="check-text">Changed banking password</div>
+    </div>
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box"><span class="check-tick">✓</span></div>
+      <div class="check-text">Enabled 2FA on email &amp; banking</div>
+    </div>
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box"><span class="check-tick">✓</span></div>
+      <div class="check-text">Checked haveibeenpwned.com</div>
+    </div>
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box"><span class="check-tick">✓</span></div>
+      <div class="check-text">Contacted bank (if needed)</div>
+    </div>
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box"><span class="check-tick">✓</span></div>
+      <div class="check-text">Ran malware scan</div>
+    </div>
+    <div class="check-item" onclick="toggleCheck(this)">
+      <div class="check-box"><span class="check-tick">✓</span></div>
+      <div class="check-text">Warned contacts if needed</div>
+    </div>
+  </div>
+</div>
+
+<div class="zine-divider"><div class="div-line"></div><div class="div-icon">✦ bonus tips ✦</div><div class="div-line"></div></div>
+
+<!-- ─── SECTION 4: BONUS ─── -->
+<div id="bonus" class="zine-section s4">
+  <div class="section-tag tag-amber">Bonus</div>
+  <div class="section-title">Quick wins for better security ✨</div>
+  <p class="section-intro">Small habits that make a big difference. Steal all of these.</p>
+
+  <div class="tips-bento">
+    <div class="bento-card" style="background:#fff0f8">
+      <div class="bento-bg">📶</div>
+      <h4>Avoid public Wi-Fi</h4>
+      <p>Or use a VPN if you must. Coffee shop networks can be sniffed by anyone on them.</p>
+    </div>
+    <div class="bento-card" style="background:#f0fff8">
+      <div class="bento-bg">🔒</div>
+      <h4>Lock your devices</h4>
+      <p>Auto-lock after 1 minute. Use a PIN, not a pattern — patterns leave smudges.</p>
+    </div>
+    <div class="bento-card" style="background:#f0f8ff">
+      <div class="bento-bg">🔄</div>
+      <h4>Keep software updated</h4>
+      <p>Updates patch security holes. Delaying them = leaving your windows open.</p>
+    </div>
+    <div class="bento-card" style="background:#fffff0">
+      <div class="bento-bg">🗄️</div>
+      <h4>Back up your data</h4>
+      <p>3-2-1 rule: 3 copies, 2 media types, 1 offsite (cloud). Ransomware can't hurt what it can't reach.</p>
+    </div>
+    <div class="bento-card" style="background:#fff8f0">
+      <div class="bento-bg">👁️</div>
+      <h4>Review app permissions</h4>
+      <p>Does your flashlight app need your contacts? No. Audit your apps every few months.</p>
+    </div>
+    <div class="bento-card" style="background:#f8f0ff">
+      <div class="bento-bg">📧</div>
+      <h4>Use an email alias</h4>
+      <p>SimpleLogin or Fastmail aliases keep your real email private. Burn the alias if you get spam.</p>
+    </div>
+  </div>
+
+  <!-- MINI QUIZ -->
+  <div class="quiz-box" id="quiz">
+    <div style="font-size:11px;font-weight:800;letter-spacing:.1em;color:#888;margin-bottom:8px">QUICK QUIZ — TEST YOURSELF</div>
+    <div class="quiz-q" id="qText"></div>
+    <div class="quiz-opts" id="qOpts"></div>
+    <div class="quiz-feedback" id="qFeedback"></div>
+    <button class="quiz-next" id="qNext" onclick="nextQ()">Next question →</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <h3>Stay curious. Stay safe. 💖</h3>
+  <p>CyberSafe Zine is free forever. Share it with friends, classmates, or anyone who still uses "password123".</p>
+  <div class="footer-badges">
+    <div class="f-badge">100% free</div>
+    <div class="f-badge">No trackers</div>
+    <div class="f-badge">Share freely</div>
+    <div class="f-badge">Made with love</div>
+  </div>
+</footer>
+
+<script>
+const words=document.querySelectorAll('.pw');
+const out=document.getElementById('phraseOut');
+const note=document.getElementById('phraseNote');
+let selected=[];
+words.forEach(w=>{
+  w.addEventListener('click',()=>{
+    const val=w.dataset.w;
+    if(w.classList.contains('selected')){
+      w.classList.remove('selected');
+      selected=selected.filter(v=>v!==val);
+    } else {
+      w.classList.add('selected');
+      selected.push(val);
+    }
+    if(selected.length===0){out.textContent='Click words above to build your passphrase…';note.textContent='Add 4+ words for a strong passphrase';}
+    else{
+      out.textContent=selected.join('-');
+      const strength=selected.length<2?'weak':selected.length<3?'okay':selected.length<4?'good':'strong!';
+      const bits=Math.round(selected.length*12.9);
+      note.textContent=`${selected.length} word${selected.length>1?'s':''} → strength: ${strength} (~${bits} bits of entropy)`;
+    }
+  });
+});
+
+function toggleCheck(el){
+  const box=el.querySelector('.check-box');
+  const txt=el.querySelector('.check-text');
+  box.classList.toggle('checked');
+  txt.classList.toggle('done');
+}
+
+const questions=[
+  {q:"Which email is most likely phishing?",opts:["support@amazon.com","amazon-security@verify-account.net","no-reply@amazon.co.uk","help@amazon.com"],ans:1,explain:"🚩 'amazon-security@verify-account.net' isn't Amazon's domain at all!"},
+  {q:"What makes a passphrase better than a complex password?",opts:["It has symbols","It's longer and easier to remember","It uses capitals","It expires monthly"],ans:1,explain:"✅ Length is the #1 factor in password strength. 4 random words = ~50 bits of entropy."},
+  {q:"You get an email saying your Netflix is suspended. What do you do?",opts:["Click the link immediately","Reply with your account details","Go to netflix.com directly in your browser","Call the number in the email"],ans:2,explain:"✅ Never click email links. Always go directly to the website yourself."},
+  {q:"What does 2FA protect against?",opts:["Malware on your device","Someone who has your password","Slow internet","Phishing websites"],ans:1,explain:"✅ Even with your password, an attacker still needs the second factor (your phone, app code, etc.)"},
+  {q:"What should you do first if you think you've been hacked?",opts:["Post about it on social media","Change your email password","Factory reset your phone","Wait and see what happens"],ans:1,explain:"✅ Email is your master key. Secure it first — it controls password resets for everything else."}
+];
+
+let qi=0,answered=false;
+
+function loadQ(){
+  answered=false;
+  const q=questions[qi];
+  document.getElementById('qText').textContent=q.q;
+  const optsEl=document.getElementById('qOpts');
+  optsEl.innerHTML='';
+  q.opts.forEach((opt,i)=>{
+    const btn=document.createElement('button');
+    btn.className='quiz-opt';btn.textContent=opt;
+    btn.onclick=()=>answer(i,btn);
+    optsEl.appendChild(btn);
+  });
+  document.getElementById('qFeedback').style.display='none';
+  document.getElementById('qNext').style.display='none';
+}
+
+function answer(i,btn){
+  if(answered)return;answered=true;
+  const q=questions[qi];
+  const fb=document.getElementById('qFeedback');
+  const nxt=document.getElementById('qNext');
+  document.querySelectorAll('.quiz-opt').forEach((b,idx)=>{
+    if(idx===q.ans)b.classList.add('correct');
+    else if(idx===i)b.classList.add('wrong');
+    b.style.pointerEvents='none';
+  });
+  fb.textContent=q.explain;
+  fb.style.display='block';
+  fb.style.background=i===q.ans?'#dcfce7':'#fee2e2';
+  fb.style.color=i===q.ans?'#14532d':'#7f1d1d';
+  nxt.style.display=qi<questions.length-1?'block':'none';
+  if(qi===questions.length-1){nxt.textContent='🎉 Done! You got this.';}
+}
+
+function nextQ(){qi=(qi+1)%questions.length;loadQ();}
+
+loadQ();
+</script>
